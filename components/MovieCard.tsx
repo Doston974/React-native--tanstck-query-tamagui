@@ -1,6 +1,7 @@
 import { Link } from "expo-router"
 import { ResultItem } from "interfaces"
-import { YStack, Card, Paragraph, Image, Text } from 'tamagui';
+import Animated from "react-native-reanimated";
+import { YStack, Card, Paragraph, Text } from 'tamagui';
 
 type MovieCardProps = {
     movie: ResultItem
@@ -8,7 +9,7 @@ type MovieCardProps = {
 
 const MovieCard = ({ movie }: MovieCardProps) => {
     return (
-        <Link href={`/(drawer)/home/${movie.media_type === "movie" ? "movie" : "movie"}/${movie.id}`} asChild>
+        <Link href={`/(drawer)/home/${movie.media_type === "movie" ? "movie" : "tv"}/${movie.id}`} asChild>
             <Card
                 elevate
                 width={150}
@@ -19,10 +20,11 @@ const MovieCard = ({ movie }: MovieCardProps) => {
                 animation={"bouncy"}
             >
                 <Card.Header p={0}>
-                    <Image
+                    <Animated.Image
                         source={{ uri: `https://image.tmdb.org/t/p/w200${movie.poster_path}` }}
                         alt={movie.title}
                         style={{ width: 150, height: 200 }}
+                        sharedTransitionTag={`${movie.media_type === 'movie' ? 'movie' : 'tv'}-${movie.id}`}
                     />
                 </Card.Header>
                 <Card.Footer p={8}>
