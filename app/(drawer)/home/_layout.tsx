@@ -24,12 +24,22 @@ const Layout = () => {
         }}
       />
 
-      {/* <Stack.Screen
+      <Stack.Screen
         name='movie/[id]'
         options={{
           title: "",
+          headerBackTitle: "Ortga"
         }}
-      /> */}
+      />
+
+      <Stack.Screen
+        name='tv/[id]'
+        options={{
+          title: "",
+          headerBackTitle: "Ortga"
+        }}
+      />
+
 
     </Stack>
   )
