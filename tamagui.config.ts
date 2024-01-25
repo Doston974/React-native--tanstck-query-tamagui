@@ -35,9 +35,7 @@ export const Container = styled(YStack, {
 });
 
 export const Main = styled(YStack, {
-  flex: 1,
   justifyContent: 'space-between',
-  maxWidth: 960,
 });
 
 export const Title = styled(H1, {
@@ -118,7 +116,7 @@ type AppConfig = typeof config;
 // Docs: https://tamagui.dev/docs/core/configuration
 
 declare module 'tamagui' {
-  interface TamaguiCustomConfig extends AppConfig {}
+  interface TamaguiCustomConfig extends AppConfig { }
 }
 
 export default config;
