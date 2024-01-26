@@ -1,8 +1,8 @@
 export interface TrendingResult {
-    page: number;
-    results: ResultItem[];
-    total_pages: number;
-    total_results: number;
+page: number;
+results: ResultItem[];
+total_pages: number;
+total_results: number;
 }
 
 export interface ResultItem {
@@ -30,4 +30,11 @@ export interface ResultItem {
 export enum MediaType {
     Movie = 'movie',
     Tv = 'tv',
+}
+
+export type FavoriteType = {
+    id: number;
+    MediaType: MediaType;
+    name: string;
+    thumb: string
 }
